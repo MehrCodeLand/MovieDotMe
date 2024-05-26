@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
             ExitBtn = new Button();
             SignInBtn = new Button();
             UsernameBox = new TextBox();
@@ -36,16 +35,6 @@
             label1 = new Label();
             label2 = new Label();
             SuspendLayout();
-            // 
-            // button1
-            // 
-            button1.Location = new Point(107, 326);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "hello";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // ExitBtn
             // 
@@ -110,7 +99,6 @@
             Controls.Add(UsernameBox);
             Controls.Add(SignInBtn);
             Controls.Add(ExitBtn);
-            Controls.Add(button1);
             Name = "HomeFm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "HomeFm";
@@ -119,8 +107,6 @@
         }
 
         #endregion
-
-        private Button button1;
         private Button ExitBtn;
         private Button SignInBtn;
         private TextBox UsernameBox;

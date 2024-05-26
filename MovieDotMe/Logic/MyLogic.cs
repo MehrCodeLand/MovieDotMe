@@ -10,10 +10,9 @@ namespace MovieDotMe.Logic;
 
 public class MyLogic   
 {
-    private static readonly string myDbPath = "C:\\Users\\micro\\Source\\Repos\\MehrCodeLand\\MovieDotMe\\MovieDotMe\\MyDb\\Db.json";
-    private static readonly string MyMovieDbPath = "C:\\Users\\micro\\Source\\Repos\\MehrCodeLand\\MovieDotMe\\MovieDotMe\\MyDb\\DbMovie.json";
-    private static readonly string myFaveDbPath = "C:\\Users\\micro\\Source\\Repos\\MehrCodeLand\\MovieDotMe\\MovieDotMe\\MyDb\\FaveMovieDb.json";
-
+    private static readonly string myDbPath = "C:\\Users\\Mehrshad\\source\\repos\\MovieDotMe\\MovieDotMe\\MyDb\\Db.json";
+    private static readonly string MyMovieDbPath = "C:\\Users\\Mehrshad\\source\\repos\\MovieDotMe\\MovieDotMe\\MyDb\\DbMovie.json";
+    private static readonly string myFaveDbPath = "C:\\Users\\Mehrshad\\source\\repos\\MovieDotMe\\MovieDotMe\\MyDb\\FaveMovieDb.json";
 
 
     // data part

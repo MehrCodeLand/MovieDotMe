@@ -25,11 +25,15 @@ namespace MovieDotMe.Forms
         private void FillDataGrid()
         {
             faveUserMovie = MyLogic.GetFaveMovie(user.Username);
-            List<string> titltes = faveUserMovie.Titles;
 
-            for (int i = 0; i < titltes.Count; i++)
+            if( faveUserMovie != null )
             {
-                dataGridView1.Rows.Add(titltes[i]);
+                List<string> titltes = faveUserMovie.Titles;
+
+                for (int i = 0; i < titltes.Count; i++)
+                {
+                    dataGridView1.Rows.Add(titltes[i]);
+                }
             }
 
             UsernameBox.Text = user.Username;

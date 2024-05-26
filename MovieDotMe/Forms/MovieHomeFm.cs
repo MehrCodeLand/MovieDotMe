@@ -42,9 +42,11 @@ namespace MovieDotMe.Forms
         }
         private void BackBtn_Click(object sender, EventArgs e)
         {
-
-            // before he goes we save all name and title
-            MyLogic.SaveFavoritMovies(faveUserMovie.Titles, user);
+            if(faveUserMovie != null)
+            {
+                // before he goes we save all name and title
+                MyLogic.SaveFavoritMovies(faveUserMovie.Titles, user);
+            }
             this.Close();
         }
 
@@ -69,7 +71,10 @@ namespace MovieDotMe.Forms
         }
         private void MyProfileBtn_Click(object sender, EventArgs e)
         {
-            MyLogic.SaveFavoritMovies(faveUserMovie.Titles, user);
+            if(faveUserMovie != null)
+            {
+                MyLogic.SaveFavoritMovies(faveUserMovie.Titles, user);
+            }
 
             var profileFm = new UserProfileFm(user);
             profileFm.ShowDialog();

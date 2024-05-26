@@ -16,6 +16,7 @@ namespace MovieDotMe.Forms
         public HomeFm()
         {
             InitializeComponent();
+            Fill_Data();
         }
 
         private void FillOutBoxes()
@@ -29,18 +30,22 @@ namespace MovieDotMe.Forms
             var mydata = MyLogic.GetAllUser();
         }
 
+        private void Fill_Data()
+        {
+            MyLogic.CreateData();
+            var mydata = MyLogic.GetAllUser();
+        }
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void SignInBtn_Click(object sender, EventArgs e)
         {
             var resultSignIn = MyLogic.Login(UsernameBox.Text.Replace(" ", "")
                 , PasswordBox.Text.Replace(" ", ""));
 
             if (resultSignIn == true)
-            { 
+            {
 
                 var user = MyLogic.GetUser(UsernameBox.Text.Replace(" ", ""));
                 // sign in
