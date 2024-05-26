@@ -14,7 +14,8 @@ namespace MovieDotMe.Forms
 {
     public partial class MovieHomeFm : Form
     {
-        private List<string> moviesTitle = new List<string>();
+        private FaveMovies faveUserMovie = new FaveMovies();
+
         private User user;
         public MovieHomeFm(User user)
         {
@@ -22,11 +23,11 @@ namespace MovieDotMe.Forms
             CreateDataFilm();
             FillDataGrid();
             this.user = user;
-
+            GetFaveUser();
+            
             dataGridView1.CellDoubleClick += dataGrid_cell;
 
         }
-
         private void CreateDataFilm()
         {
             MyLogic.CreateMovies();
@@ -35,10 +36,15 @@ namespace MovieDotMe.Forms
         {
             dataGridView1.DataSource = MyLogic.GetAllMovies();
         }
+        private void GetFaveUser()
+        {
+            faveUserMovie = MyLogic.GetFaveMovie(user.Username);
+        }
         private void BackBtn_Click(object sender, EventArgs e)
         {
 
             // before he goes we save all name and title
+            MyLogic.SaveFavoritMovies(faveUserMovie.Titles, user);
             this.Close();
         }
 
@@ -50,20 +56,23 @@ namespace MovieDotMe.Forms
                 DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
                 string movieTitle = (string)selectedRow.Cells[1].Value;
 
-                if( moviesTitle.Any(x => x == movieTitle))
+                if(faveUserMovie.Titles.Any(x => x == movieTitle))
                 {
                     var message = "it is already added";
                     MessageBox.Show(message);
                 }
                 else
                 {
-                    moviesTitle.Add(movieTitle);
+                    faveUserMovie.Titles.Add(movieTitle);
                 }
             }
         }
         private void MyProfileBtn_Click(object sender, EventArgs e)
         {
-            MyLogic.SaveFavoritMovies(moviesTitle, user);
+            MyLogic.SaveFavoritMovies(faveUserMovie.Titles, user);
+
+            var profileFm = new UserProfileFm(user);
+            profileFm.ShowDialog();
         }
     }
 }

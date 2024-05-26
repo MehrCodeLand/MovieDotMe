@@ -10,9 +10,11 @@ namespace MovieDotMe.Logic;
 
 public class MyLogic   
 {
-    private static readonly string myDbPath = "C:\\Users\\Mehrshad\\source\\repos\\MovieDotMe\\MovieDotMe\\MyDb\\Db.json";
-    private static readonly string MyMovieDbPath = "C:\\Users\\Mehrshad\\source\\repos\\MovieDotMe\\MovieDotMe\\MyDb\\DbMovie.json";
-    private static readonly string myFaveDbPath = "C:\\Users\\Mehrshad\\source\\repos\\MovieDotMe\\MovieDotMe\\MyDb\\FaveMovieDb.json";
+    private static readonly string myDbPath = "C:\\Users\\micro\\Source\\Repos\\MehrCodeLand\\MovieDotMe\\MovieDotMe\\MyDb\\Db.json";
+    private static readonly string MyMovieDbPath = "C:\\Users\\micro\\Source\\Repos\\MehrCodeLand\\MovieDotMe\\MovieDotMe\\MyDb\\DbMovie.json";
+    private static readonly string myFaveDbPath = "C:\\Users\\micro\\Source\\Repos\\MehrCodeLand\\MovieDotMe\\MovieDotMe\\MyDb\\FaveMovieDb.json";
+
+
 
     // data part
     public static void CreateData()
@@ -139,12 +141,21 @@ public class MyLogic
         using ( var rd = new StreamReader(myFaveDbPath))
         {
             var json = rd.ReadToEnd();
-            var FaveMovies = JsonConvert.DeserializeObject<List<FaveMovies>>(json);
+            var faveMovies = JsonConvert.DeserializeObject<List<FaveMovies>>(json);
             rd.Close();
 
-            return FaveMovies.FirstOrDefault(x => x.Username == username);
+            if(faveMovies != null)
+            {
+                return faveMovies.FirstOrDefault( x => x.Username == username );
+            }
+            else
+            {
+                return new FaveMovies()
+                {
+                    Titles = new List<string> { }
+                };
+            }
         }
-
     }
     public static void SaveFavoritMovies(List<string> movieTitle , User user)
     {
@@ -155,7 +166,10 @@ public class MyLogic
             Titles = movieTitle
         };
 
-        var favesSer = JsonConvert.SerializeObject(faveMovie);
+        var myMovieList = new List<FaveMovies>();
+        myMovieList.Add(faveMovie);
+
+        var favesSer = JsonConvert.SerializeObject(myMovieList);
         using( var wr = new StreamWriter(myFaveDbPath))
         {
             wr.WriteLine(favesSer);
