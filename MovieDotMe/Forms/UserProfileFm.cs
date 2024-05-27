@@ -26,7 +26,7 @@ namespace MovieDotMe.Forms
         {
             faveUserMovie = MyLogic.GetFaveMovie(user.Username);
 
-            if( faveUserMovie != null )
+            if (faveUserMovie != null)
             {
                 List<string> titltes = faveUserMovie.Titles;
 

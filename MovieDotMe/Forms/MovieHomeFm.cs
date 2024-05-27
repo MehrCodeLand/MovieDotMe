@@ -24,7 +24,7 @@ namespace MovieDotMe.Forms
             FillDataGrid();
             this.user = user;
             GetFaveUser();
-            
+
             dataGridView1.CellDoubleClick += dataGrid_cell;
 
         }
@@ -42,7 +42,7 @@ namespace MovieDotMe.Forms
         }
         private void BackBtn_Click(object sender, EventArgs e)
         {
-            if(faveUserMovie != null)
+            if (faveUserMovie != null)
             {
                 // before he goes we save all name and title
                 MyLogic.SaveFavoritMovies(faveUserMovie.Titles, user);
@@ -58,7 +58,7 @@ namespace MovieDotMe.Forms
                 DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
                 string movieTitle = (string)selectedRow.Cells[1].Value;
 
-                if(faveUserMovie.Titles.Any(x => x == movieTitle))
+                if (faveUserMovie.Titles.Any(x => x == movieTitle))
                 {
                     var message = "it is already added";
                     MessageBox.Show(message);
@@ -71,13 +71,19 @@ namespace MovieDotMe.Forms
         }
         private void MyProfileBtn_Click(object sender, EventArgs e)
         {
-            if(faveUserMovie != null)
+            if (faveUserMovie != null)
             {
                 MyLogic.SaveFavoritMovies(faveUserMovie.Titles, user);
             }
 
             var profileFm = new UserProfileFm(user);
             profileFm.ShowDialog();
+        }
+
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+            // time to search
+            var searchText = SearchBox.Text;
         }
     }
 }

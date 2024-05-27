@@ -92,6 +92,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.daniele_levis_pelusi_mkMSXR86kYY_unsplash;
             ClientSize = new Size(800, 450);
             Controls.Add(label2);
             Controls.Add(label1);

@@ -30,7 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             BackBtn = new Button();
-            button1 = new Button();
             dataGridView1 = new DataGridView();
             MoviesName = new DataGridViewTextBoxColumn();
             movieBindingSource = new BindingSource(components);
@@ -43,33 +42,25 @@
             // 
             // BackBtn
             // 
-            BackBtn.Location = new Point(260, 394);
+            BackBtn.Location = new Point(229, 219);
+            BackBtn.Margin = new Padding(2, 2, 2, 2);
             BackBtn.Name = "BackBtn";
-            BackBtn.Size = new Size(112, 34);
+            BackBtn.Size = new Size(212, 20);
             BackBtn.TabIndex = 0;
             BackBtn.Text = "Back";
             BackBtn.UseVisualStyleBackColor = true;
             BackBtn.Click += BackBtn_Click;
             // 
-            // button1
-            // 
-            button1.Location = new Point(582, 394);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 1;
-            button1.Text = "Back";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { MoviesName });
-            dataGridView1.Location = new Point(482, 119);
+            dataGridView1.Location = new Point(229, 80);
+            dataGridView1.Margin = new Padding(2, 2, 2, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(212, 225);
+            dataGridView1.Size = new Size(212, 135);
             dataGridView1.TabIndex = 2;
             // 
             // MoviesName
@@ -89,20 +80,21 @@
             // 
             // UsernameBox
             // 
-            UsernameBox.Location = new Point(222, 119);
+            UsernameBox.Location = new Point(229, 53);
+            UsernameBox.Margin = new Padding(2, 2, 2, 2);
             UsernameBox.Name = "UsernameBox";
-            UsernameBox.Size = new Size(254, 31);
+            UsernameBox.Size = new Size(212, 23);
             UsernameBox.TabIndex = 3;
             // 
             // UserProfileFm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(901, 534);
+            ClientSize = new Size(631, 320);
             Controls.Add(UsernameBox);
             Controls.Add(dataGridView1);
-            Controls.Add(button1);
             Controls.Add(BackBtn);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "UserProfileFm";
             Text = "UserProfileFm";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -115,7 +107,6 @@
         #endregion
 
         private Button BackBtn;
-        private Button button1;
         private DataGridView dataGridView1;
         private BindingSource movieBindingSource;
         private BindingSource faveMoviesBindingSource;

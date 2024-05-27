@@ -36,6 +36,8 @@
             movieBindingSource = new BindingSource(components);
             BackBtn = new Button();
             MyProfileBtn = new Button();
+            SearchBox = new TextBox();
+            SearchBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)movieBindingSource).BeginInit();
             SuspendLayout();
@@ -46,7 +48,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { movieIDDataGridViewTextBoxColumn, titleDataGridViewTextBoxColumn, directorDataGridViewTextBoxColumn });
             dataGridView1.DataSource = movieBindingSource;
-            dataGridView1.Location = new Point(200, 73);
+            dataGridView1.Location = new Point(218, 100);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(343, 193);
@@ -94,11 +96,30 @@
             MyProfileBtn.UseVisualStyleBackColor = true;
             MyProfileBtn.Click += MyProfileBtn_Click;
             // 
+            // SearchBox
+            // 
+            SearchBox.Location = new Point(277, 71);
+            SearchBox.Name = "SearchBox";
+            SearchBox.Size = new Size(284, 23);
+            SearchBox.TabIndex = 3;
+            // 
+            // SearchBtn
+            // 
+            SearchBtn.Location = new Point(218, 71);
+            SearchBtn.Name = "SearchBtn";
+            SearchBtn.Size = new Size(53, 23);
+            SearchBtn.TabIndex = 5;
+            SearchBtn.Text = "Search";
+            SearchBtn.UseVisualStyleBackColor = true;
+            SearchBtn.Click += SearchBtn_Click;
+            // 
             // MovieHomeFm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(SearchBtn);
+            Controls.Add(SearchBox);
             Controls.Add(MyProfileBtn);
             Controls.Add(BackBtn);
             Controls.Add(dataGridView1);
@@ -108,6 +129,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)movieBindingSource).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -119,5 +141,7 @@
         private DataGridViewTextBoxColumn directorDataGridViewTextBoxColumn;
         private BindingSource movieBindingSource;
         private Button MyProfileBtn;
+        private TextBox SearchBox;
+        private Button SearchBtn;
     }
 }
