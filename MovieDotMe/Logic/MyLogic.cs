@@ -175,5 +175,19 @@ public class MyLogic
             wr.Close();
         }
     }
+    
+
+    public static IEnumerable<Movie> SearchMovieTitle(string title)
+    {
+        using (var rd = new StreamReader(MyMovieDbPath))
+        {
+            var json = rd.ReadToEnd();
+            var movie = JsonConvert.DeserializeObject<List<Movie>>(json);
+
+            var searched = movie.Where(x => x.Title.Contains(title));
+
+            return searched;
+        }
+    }
 }
 

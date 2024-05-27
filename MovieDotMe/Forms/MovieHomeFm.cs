@@ -83,7 +83,19 @@ namespace MovieDotMe.Forms
         private void SearchBtn_Click(object sender, EventArgs e)
         {
             // time to search
+
             var searchText = SearchBox.Text;
+
+            if(searchText.Length == 0)
+            {
+                FillDataGrid();
+            }
+            else
+            {
+                var searched = MyLogic.SearchMovieTitle(searchText);
+            
+                dataGridView1.DataSource = searched;
+            }
         }
     }
 }
