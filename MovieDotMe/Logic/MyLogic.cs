@@ -10,16 +10,16 @@ namespace MovieDotMe.Logic;
 
 public class MyLogic   
 {
-    private static readonly string myDbPath = "C:\\Users\\Mehrshad\\source\\repos\\MovieDotMe\\MovieDotMe\\MyDb\\Db.json";
-    private static readonly string MyMovieDbPath = "C:\\Users\\Mehrshad\\source\\repos\\MovieDotMe\\MovieDotMe\\MyDb\\DbMovie.json";
-    private static readonly string myFaveDbPath = "C:\\Users\\Mehrshad\\source\\repos\\MovieDotMe\\MovieDotMe\\MyDb\\FaveMovieDb.json";
+    private static readonly string myDbPath = "C:\\Users\\micro\\Source\\Repos\\MehrCodeLand\\MovieDotMe\\MovieDotMe\\MyDb\\Db.json";
+    private static readonly string MyMovieDbPath = "C:\\Users\\micro\\Source\\Repos\\MehrCodeLand\\MovieDotMe\\MovieDotMe\\MyDb\\DbMovie.json";
+    private static readonly string myFaveDbPath = "C:\\Users\\micro\\Source\\Repos\\MehrCodeLand\\MovieDotMe\\MovieDotMe\\MyDb\\FaveMovieDb.json";
 
 
     // data part
     public static void CreateData()
     {
         var isUserExist = GetAllUser();
-        if(isUserExist.Count == 0)
+        if(isUserExist == null)
         {
             List<User> users = new List<User>()
             {
@@ -176,6 +176,42 @@ public class MyLogic
         }
     }
     
+
+    public static bool SignUp(string username , string password)
+    {
+        var myUser = new User(); 
+        var allUsers = new List<User>();
+        using (var rd = new StreamReader(myDbPath))
+        {
+            var json = rd.ReadToEnd();
+            var users = JsonConvert.DeserializeObject<List<User>>(json);
+
+            allUsers = users;
+
+            var IsUser = users.Any(x => x.Username == username);
+            if(IsUser == true)
+            {
+                return false; 
+            }
+
+            var oldIdLast = users.Count();
+
+            myUser.UserID = oldIdLast + 1;
+            myUser.Username = username;
+            myUser.Password = password;
+        }
+
+        using (var wd = new StreamWriter(myDbPath))
+        {
+            allUsers.Add(myUser);
+            var serializeUser = JsonConvert.SerializeObject(allUsers);
+            wd.WriteLine(serializeUser);
+            wd.Close();
+        }
+
+        return false;
+    }
+
 
     public static IEnumerable<Movie> SearchMovieTitle(string title)
     {

@@ -59,5 +59,11 @@ namespace MovieDotMe.Forms
                 FillOutBoxes();
             }
         }
+
+        private void SignUpBtn_Click(object sender, EventArgs e)
+        {
+            var signUp = new SignUpFm();
+            signUp.ShowDialog();
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace MovieDotMe.Forms
 {
-    partial class HomeFm
+    partial class SignUpFm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,112 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ExitBtn = new Button();
-            SignInBtn = new Button();
             UsernameBox = new TextBox();
             PasswordBox = new TextBox();
             label1 = new Label();
             label2 = new Label();
             SignUpBtn = new Button();
+            BackBtn = new Button();
             SuspendLayout();
-            // 
-            // ExitBtn
-            // 
-            ExitBtn.Location = new Point(499, 332);
-            ExitBtn.Margin = new Padding(4, 5, 4, 5);
-            ExitBtn.Name = "ExitBtn";
-            ExitBtn.Size = new Size(107, 38);
-            ExitBtn.TabIndex = 1;
-            ExitBtn.Text = "Exit";
-            ExitBtn.UseVisualStyleBackColor = true;
-            ExitBtn.Click += ExitBtn_Click;
-            // 
-            // SignInBtn
-            // 
-            SignInBtn.Location = new Point(634, 332);
-            SignInBtn.Margin = new Padding(4, 5, 4, 5);
-            SignInBtn.Name = "SignInBtn";
-            SignInBtn.Size = new Size(107, 38);
-            SignInBtn.TabIndex = 2;
-            SignInBtn.Text = "Sign in";
-            SignInBtn.UseVisualStyleBackColor = true;
-            SignInBtn.Click += SignInBtn_Click;
             // 
             // UsernameBox
             // 
-            UsernameBox.Location = new Point(394, 200);
-            UsernameBox.Margin = new Padding(4, 5, 4, 5);
+            UsernameBox.Location = new Point(256, 91);
             UsernameBox.Name = "UsernameBox";
-            UsernameBox.Size = new Size(407, 31);
-            UsernameBox.TabIndex = 3;
+            UsernameBox.Size = new Size(289, 31);
+            UsernameBox.TabIndex = 0;
             // 
             // PasswordBox
             // 
-            PasswordBox.Location = new Point(394, 265);
-            PasswordBox.Margin = new Padding(4, 5, 4, 5);
+            PasswordBox.Location = new Point(256, 147);
             PasswordBox.Name = "PasswordBox";
-            PasswordBox.Size = new Size(407, 31);
-            PasswordBox.TabIndex = 4;
+            PasswordBox.Size = new Size(289, 31);
+            PasswordBox.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(304, 205);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(149, 94);
             label1.Name = "label1";
             label1.Size = new Size(91, 25);
-            label1.TabIndex = 5;
+            label1.TabIndex = 2;
             label1.Text = "Username";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(304, 278);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(153, 153);
             label2.Name = "label2";
             label2.Size = new Size(87, 25);
-            label2.TabIndex = 6;
+            label2.TabIndex = 3;
             label2.Text = "Password";
             // 
             // SignUpBtn
             // 
-            SignUpBtn.Location = new Point(873, 193);
-            SignUpBtn.Margin = new Padding(4, 5, 4, 5);
+            SignUpBtn.Location = new Point(433, 216);
             SignUpBtn.Name = "SignUpBtn";
-            SignUpBtn.Size = new Size(107, 38);
-            SignUpBtn.TabIndex = 7;
-            SignUpBtn.Text = "sign Up";
+            SignUpBtn.Size = new Size(112, 34);
+            SignUpBtn.TabIndex = 4;
+            SignUpBtn.Text = "SignUp";
             SignUpBtn.UseVisualStyleBackColor = true;
             SignUpBtn.Click += SignUpBtn_Click;
             // 
-            // HomeFm
+            // BackBtn
+            // 
+            BackBtn.Location = new Point(256, 216);
+            BackBtn.Name = "BackBtn";
+            BackBtn.Size = new Size(112, 34);
+            BackBtn.TabIndex = 5;
+            BackBtn.Text = "Back";
+            BackBtn.UseVisualStyleBackColor = true;
+            BackBtn.Click += BackBtn_Click;
+            // 
+            // SignUpFm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.daniele_levis_pelusi_mkMSXR86kYY_unsplash;
-            ClientSize = new Size(1143, 750);
+            ClientSize = new Size(800, 450);
+            Controls.Add(BackBtn);
             Controls.Add(SignUpBtn);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(PasswordBox);
             Controls.Add(UsernameBox);
-            Controls.Add(SignInBtn);
-            Controls.Add(ExitBtn);
-            Margin = new Padding(4, 5, 4, 5);
-            Name = "HomeFm";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "HomeFm";
+            Name = "SignUpFm";
+            Text = "SignUpFm";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Button ExitBtn;
-        private Button SignInBtn;
+
         private TextBox UsernameBox;
         private TextBox PasswordBox;
         private Label label1;
         private Label label2;
         private Button SignUpBtn;
+        private Button BackBtn;
     }
 }

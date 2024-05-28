@@ -49,7 +49,6 @@ namespace MovieDotMe.Forms
             }
             this.Close();
         }
-
         private void dataGrid_cell(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -79,7 +78,6 @@ namespace MovieDotMe.Forms
             var profileFm = new UserProfileFm(user);
             profileFm.ShowDialog();
         }
-
         private void SearchBtn_Click(object sender, EventArgs e)
         {
             // time to search
@@ -94,7 +92,7 @@ namespace MovieDotMe.Forms
             {
                 var searched = MyLogic.SearchMovieTitle(searchText);
             
-                dataGridView1.DataSource = searched;
+                dataGridView1.DataSource = searched.ToList();
             }
         }
     }
