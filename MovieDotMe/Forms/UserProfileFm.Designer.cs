@@ -42,8 +42,8 @@
             // 
             // BackBtn
             // 
-            BackBtn.Location = new Point(229, 219);
-            BackBtn.Margin = new Padding(2, 2, 2, 2);
+            BackBtn.Location = new Point(229, 262);
+            BackBtn.Margin = new Padding(2);
             BackBtn.Name = "BackBtn";
             BackBtn.Size = new Size(212, 20);
             BackBtn.TabIndex = 0;
@@ -56,11 +56,11 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { MoviesName });
             dataGridView1.Location = new Point(229, 80);
-            dataGridView1.Margin = new Padding(2, 2, 2, 2);
+            dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(212, 135);
+            dataGridView1.Size = new Size(212, 178);
             dataGridView1.TabIndex = 2;
             // 
             // MoviesName
@@ -81,7 +81,7 @@
             // UsernameBox
             // 
             UsernameBox.Location = new Point(229, 53);
-            UsernameBox.Margin = new Padding(2, 2, 2, 2);
+            UsernameBox.Margin = new Padding(2);
             UsernameBox.Name = "UsernameBox";
             UsernameBox.Size = new Size(212, 23);
             UsernameBox.TabIndex = 3;
@@ -94,7 +94,7 @@
             Controls.Add(UsernameBox);
             Controls.Add(dataGridView1);
             Controls.Add(BackBtn);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "UserProfileFm";
             Text = "UserProfileFm";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

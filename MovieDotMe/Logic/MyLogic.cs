@@ -10,9 +10,9 @@ namespace MovieDotMe.Logic;
 
 public class MyLogic   
 {
-    private static readonly string myDbPath = "C:\\Users\\micro\\Source\\Repos\\MehrCodeLand\\MovieDotMe\\MovieDotMe\\MyDb\\Db.json";
-    private static readonly string MyMovieDbPath = "C:\\Users\\micro\\Source\\Repos\\MehrCodeLand\\MovieDotMe\\MovieDotMe\\MyDb\\DbMovie.json";
-    private static readonly string myFaveDbPath = "C:\\Users\\micro\\Source\\Repos\\MehrCodeLand\\MovieDotMe\\MovieDotMe\\MyDb\\FaveMovieDb.json";
+    private static readonly string myDbPath = "C:\\Users\\Mehrshad\\source\\repos\\MovieDotMe\\MovieDotMe\\MyDb\\Db.json";
+    private static readonly string MyMovieDbPath = "C:\\Users\\Mehrshad\\source\\repos\\MovieDotMe\\MovieDotMe\\MyDb\\DbMovie.json";
+    private static readonly string myFaveDbPath = "C:\\Users\\Mehrshad\\source\\repos\\MovieDotMe\\MovieDotMe\\MyDb\\FaveMovieDb.json";
 
 
     // data part
@@ -168,6 +168,7 @@ public class MyLogic
         var myMovieList = new List<FaveMovies>();
         myMovieList.Add(faveMovie);
 
+
         var favesSer = JsonConvert.SerializeObject(myMovieList);
         using( var wr = new StreamWriter(myFaveDbPath))
         {
@@ -211,8 +212,19 @@ public class MyLogic
 
         return false;
     }
+    public static void RemoveFromList(string movieTitle , FaveMovies fave)
+    {
+        fave.Titles.Remove(movieTitle);
+        var faveList = new List<FaveMovies>();
+        faveList.Add(fave);
+        var myFave = JsonConvert.SerializeObject(faveList);
 
-
+        using(var wr = new StreamWriter(myFaveDbPath))
+        {
+            wr.WriteLine(myFave);
+            wr.Close();
+        }
+    }
     public static IEnumerable<Movie> SearchMovieTitle(string title)
     {
         using (var rd = new StreamReader(MyMovieDbPath))

@@ -21,12 +21,13 @@ namespace MovieDotMe.Forms
             InitializeComponent();
             this.user = user;
             FillDataGrid();
+
+            dataGridView1.CellDoubleClick += dataGrid_cell;
         }
         private void FillDataGrid()
         {
             faveUserMovie = MyLogic.GetFaveMovie(user.Username);
-
-            if (faveUserMovie != null)
+            if (faveUserMovie != null && faveUserMovie.Titles != null)
             {
                 List<string> titltes = faveUserMovie.Titles;
 
@@ -35,7 +36,6 @@ namespace MovieDotMe.Forms
                     dataGridView1.Rows.Add(titltes[i]);
                 }
             }
-
             UsernameBox.Text = user.Username;
         }
         private void BackBtn_Click(object sender, EventArgs e)
@@ -43,6 +43,22 @@ namespace MovieDotMe.Forms
             this.Close();
         }
 
+
+        private void dataGrid_cell(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+                string movieTitle = (string)selectedRow.Cells[0].Value;
+
+                // delete movie from list
+                MyLogic.RemoveFromList(movieTitle, faveUserMovie);
+                
+            }
+
+            FillDataGrid();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
 

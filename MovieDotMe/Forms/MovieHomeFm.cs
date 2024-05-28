@@ -28,6 +28,14 @@ namespace MovieDotMe.Forms
             dataGridView1.CellDoubleClick += dataGrid_cell;
 
         }
+
+        private void CreateFakeList()
+        {
+            if(faveUserMovie.Titles == null)
+            {
+                faveUserMovie.Titles = new List<string>();
+            }
+        }
         private void CreateDataFilm()
         {
             MyLogic.CreateMovies();
@@ -38,7 +46,11 @@ namespace MovieDotMe.Forms
         }
         private void GetFaveUser()
         {
-            faveUserMovie = MyLogic.GetFaveMovie(user.Username);
+            var fave = MyLogic.GetFaveMovie(user.Username);
+            if( fave != null )
+            {
+                faveUserMovie = fave;
+            }
         }
         private void BackBtn_Click(object sender, EventArgs e)
         {
@@ -51,6 +63,9 @@ namespace MovieDotMe.Forms
         }
         private void dataGrid_cell(object sender, DataGridViewCellEventArgs e)
         {
+
+            CreateFakeList();
+
             if (e.RowIndex >= 0)
             {
                 dataGridView1.Rows[e.RowIndex].Selected = true;

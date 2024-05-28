@@ -39,10 +39,9 @@
             // 
             // ExitBtn
             // 
-            ExitBtn.Location = new Point(499, 332);
-            ExitBtn.Margin = new Padding(4, 5, 4, 5);
+            ExitBtn.Location = new Point(276, 199);
             ExitBtn.Name = "ExitBtn";
-            ExitBtn.Size = new Size(107, 38);
+            ExitBtn.Size = new Size(75, 23);
             ExitBtn.TabIndex = 1;
             ExitBtn.Text = "Exit";
             ExitBtn.UseVisualStyleBackColor = true;
@@ -50,10 +49,9 @@
             // 
             // SignInBtn
             // 
-            SignInBtn.Location = new Point(634, 332);
-            SignInBtn.Margin = new Padding(4, 5, 4, 5);
+            SignInBtn.Location = new Point(382, 199);
             SignInBtn.Name = "SignInBtn";
-            SignInBtn.Size = new Size(107, 38);
+            SignInBtn.Size = new Size(75, 23);
             SignInBtn.TabIndex = 2;
             SignInBtn.Text = "Sign in";
             SignInBtn.UseVisualStyleBackColor = true;
@@ -61,46 +59,41 @@
             // 
             // UsernameBox
             // 
-            UsernameBox.Location = new Point(394, 200);
-            UsernameBox.Margin = new Padding(4, 5, 4, 5);
+            UsernameBox.Location = new Point(276, 120);
             UsernameBox.Name = "UsernameBox";
-            UsernameBox.Size = new Size(407, 31);
+            UsernameBox.Size = new Size(286, 23);
             UsernameBox.TabIndex = 3;
             // 
             // PasswordBox
             // 
-            PasswordBox.Location = new Point(394, 265);
-            PasswordBox.Margin = new Padding(4, 5, 4, 5);
+            PasswordBox.Location = new Point(276, 159);
             PasswordBox.Name = "PasswordBox";
-            PasswordBox.Size = new Size(407, 31);
+            PasswordBox.Size = new Size(286, 23);
             PasswordBox.TabIndex = 4;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(304, 205);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(213, 123);
             label1.Name = "label1";
-            label1.Size = new Size(91, 25);
+            label1.Size = new Size(60, 15);
             label1.TabIndex = 5;
             label1.Text = "Username";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(304, 278);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(213, 167);
             label2.Name = "label2";
-            label2.Size = new Size(87, 25);
+            label2.Size = new Size(57, 15);
             label2.TabIndex = 6;
             label2.Text = "Password";
             // 
             // SignUpBtn
             // 
-            SignUpBtn.Location = new Point(873, 193);
-            SignUpBtn.Margin = new Padding(4, 5, 4, 5);
+            SignUpBtn.Location = new Point(487, 199);
             SignUpBtn.Name = "SignUpBtn";
-            SignUpBtn.Size = new Size(107, 38);
+            SignUpBtn.Size = new Size(75, 23);
             SignUpBtn.TabIndex = 7;
             SignUpBtn.Text = "sign Up";
             SignUpBtn.UseVisualStyleBackColor = true;
@@ -108,10 +101,9 @@
             // 
             // HomeFm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.daniele_levis_pelusi_mkMSXR86kYY_unsplash;
-            ClientSize = new Size(1143, 750);
+            ClientSize = new Size(800, 450);
             Controls.Add(SignUpBtn);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -119,7 +111,6 @@
             Controls.Add(UsernameBox);
             Controls.Add(SignInBtn);
             Controls.Add(ExitBtn);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "HomeFm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "HomeFm";
