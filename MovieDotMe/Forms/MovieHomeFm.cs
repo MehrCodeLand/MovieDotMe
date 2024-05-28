@@ -15,7 +15,7 @@ namespace MovieDotMe.Forms
     public partial class MovieHomeFm : Form
     {
         private FaveMovies faveUserMovie = new FaveMovies();
-
+        public int oldFaveMovieCount = 0;
         private User user;
         public MovieHomeFm(User user)
         {
@@ -24,9 +24,8 @@ namespace MovieDotMe.Forms
             FillDataGrid();
             this.user = user;
             GetFaveUser();
-
+            oldFaveMovieCount = faveUserMovie.Titles.Count;
             dataGridView1.CellDoubleClick += dataGrid_cell;
-
         }
 
         private void CreateFakeList()
@@ -58,6 +57,7 @@ namespace MovieDotMe.Forms
             {
                 // before he goes we save all name and title
                 MyLogic.SaveFavoritMovies(faveUserMovie.Titles, user);
+                faveUserMovie = MyLogic.GetFaveMovie(user.Username);
             }
             this.Close();
         }
@@ -85,9 +85,12 @@ namespace MovieDotMe.Forms
         }
         private void MyProfileBtn_Click(object sender, EventArgs e)
         {
-            if (faveUserMovie != null)
+            if(faveUserMovie.Titles.Count != oldFaveMovieCount)
             {
                 MyLogic.SaveFavoritMovies(faveUserMovie.Titles, user);
+
+                // new list is created 
+                faveUserMovie = MyLogic.GetFaveMovie(user.Username);
             }
 
             var profileFm = new UserProfileFm(user);

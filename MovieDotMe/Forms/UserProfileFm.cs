@@ -54,10 +54,11 @@ namespace MovieDotMe.Forms
 
                 // delete movie from list
                 MyLogic.RemoveFromList(movieTitle, faveUserMovie);
-                
+
+                dataGridView1.Rows.Clear();
+                FillDataGrid();
             }
 
-            FillDataGrid();
         }
         private void button1_Click(object sender, EventArgs e)
         {
