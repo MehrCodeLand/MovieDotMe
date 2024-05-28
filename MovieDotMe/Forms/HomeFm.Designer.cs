@@ -113,7 +113,7 @@
             Controls.Add(ExitBtn);
             Name = "HomeFm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "HomeFm";
+            Text = "login";
             ResumeLayout(false);
             PerformLayout();
         }

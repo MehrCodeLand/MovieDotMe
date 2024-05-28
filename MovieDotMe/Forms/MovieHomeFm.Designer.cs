@@ -125,7 +125,7 @@
             Controls.Add(dataGridView1);
             Name = "MovieHomeFm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "MovieHomeFm";
+            Text = "Movie List";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)movieBindingSource).EndInit();
             ResumeLayout(false);

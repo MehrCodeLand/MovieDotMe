@@ -30,7 +30,7 @@ namespace MovieDotMe.Forms
 
         private void CreateFakeList()
         {
-            if(faveUserMovie.Titles == null)
+            if (faveUserMovie.Titles == null)
             {
                 faveUserMovie.Titles = new List<string>();
             }
@@ -46,7 +46,7 @@ namespace MovieDotMe.Forms
         private void GetFaveUser()
         {
             var fave = MyLogic.GetFaveMovie(user.Username);
-            if( fave != null )
+            if (fave != null)
             {
                 faveUserMovie = fave;
             }
@@ -85,7 +85,7 @@ namespace MovieDotMe.Forms
         }
         private void MyProfileBtn_Click(object sender, EventArgs e)
         {
-            if(faveUserMovie.Titles.Count != oldFaveMovieCount)
+            if (faveUserMovie.Titles.Count != oldFaveMovieCount)
             {
                 MyLogic.SaveFavoritMovies(faveUserMovie.Titles, user);
 
@@ -102,14 +102,14 @@ namespace MovieDotMe.Forms
 
             var searchText = SearchBox.Text;
 
-            if(searchText.Length == 0)
+            if (searchText.Length == 0)
             {
                 FillDataGrid();
             }
             else
             {
                 var searched = MyLogic.SearchMovieTitle(searchText);
-            
+
                 dataGridView1.DataSource = searched.ToList();
             }
         }

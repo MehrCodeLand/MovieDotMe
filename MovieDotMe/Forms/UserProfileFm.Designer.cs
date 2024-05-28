@@ -96,7 +96,8 @@
             Controls.Add(BackBtn);
             Margin = new Padding(2);
             Name = "UserProfileFm";
-            Text = "UserProfileFm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Profile";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)movieBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)faveMoviesBindingSource).EndInit();
